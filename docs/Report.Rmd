@@ -1,0 +1,36 @@
+---
+title: "Snail Growth Rate Analysis"
+output: pdf_document
+date: "2026-09-12"
+---
+
+```{r setup, include=FALSE}
+library(knitr)
+opts_chunk$set(echo = TRUE)
+```
+
+## Introduction
+
+This report shows the effect of temperature and population of origin on the growth rate of snails
+
+## Results of Experiment
+
+Below is the boxplot showing growth rates across temperature treatments of 10°C and 20°C and populations:
+
+
+```{r boxplot-figure, echo=FALSE, fig.align='center', out.width='70%'}
+include_graphics("../results/MyBoxplot.pdf")
+```
+
+## Statistical Analysis
+
+We did a two way ANOVA which evaluated temperature, population, and the interaction between the two:
+
+```{r anova-summary, echo=FALSE}
+m1.summary <- readRDS("../results/m1.summary.rds")
+m1.summary
+```
+
+### Conclusion
+
+Temperature and population both did not show statistically significant effect on snail growth rate. There was no significant effect between temperature and population. 
